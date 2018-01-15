@@ -1,18 +1,28 @@
 import { Component } from '@angular/core';
-import {Github} from './github'
+import {Http, Response} from '@angular/http';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+ selector: 'app-root',
+ templateUrl: './app.component.html',
+ styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  github = "data" [""];
+ constructor(private http:Http){}
+ userName="";
+ githubData:any="";
+ avatarUrl="./assets/imageholder.png";
 
-  constructor() {
-    this.github = ["", ""]
-  }
+ userSearch(){
+   this.http.get("https://api.github.com/users/"+this.userName).subscribe((response:Response)=>{
+     const userData=response.json();
+     this.githubData=userData;
+     this.avatarUrl=userData.avatar_url;
+     console.log(userData);
+   }
+ )
+ }
 
-}
+
+} 
 
 
 

@@ -1,8 +1,6 @@
 {
     "compilerOption": {
-        "experimentalDecorators": true,
-        "allowJs":true,
-        "emitDecoratorMetadata": true,
-        "allowJs":true
+        "javascript.implicitProjectConfig.experimentalDecorators": false,
+        "allowJs": false
     }
 }
