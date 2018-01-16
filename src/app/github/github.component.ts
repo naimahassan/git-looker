@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Github } from '../github'
+import { User } from '../user'
 
 @Component({
   selector: 'app-github',
@@ -7,7 +7,7 @@ import { Github } from '../github'
   styleUrls: ['./github.component.css']
 })
 export class GithubComponent implements OnInit {
-  github = Github;
+  user = User;
 
   constructor() { }
 
