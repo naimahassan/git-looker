@@ -1,3 +1,3 @@
 export class User {
-    constructor(api_key:string, q:string){}
+    // constructor(api_key:string, q:string){}
 }

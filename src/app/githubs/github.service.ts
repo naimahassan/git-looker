@@ -15,12 +15,12 @@ export class GithubService {
    }
 
    getUser(){
-     return this._http.get('https://api.github.com/users/'+this.username + '?api_key' + this.api_key)
-      .map(result => result);
+    return this._http.get('https://api.github.com/users/' +this.username + '?api_key=' + this.api_key)
+    .map(result => result);
    }
 
    getRepos(){
-    return this._http.get('https://api.github.com/users/'+this.username + '/repos' + '?api_key' + this.api_key)
+    return this._http.get('https://api.github.com/users/'+ this.username + '/repos' + '?api_key=' + this.api_key)
     .map(result => result);
    }
 
