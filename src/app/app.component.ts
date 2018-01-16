@@ -15,7 +15,8 @@ export class AppComponent {
 
  ngOnInit(){
    this._githubService.getUser().subscribe(userName => {
-      console.log(userName)
+      //console.log(userName)
+      this.userName = userName
    })
  }
 
