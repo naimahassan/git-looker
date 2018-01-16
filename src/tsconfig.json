@@ -1,0 +1,8 @@
+{
+    "compilerOption": {
+        "experimentalDecorators": true,
+        "allowJs":true,
+        "emitDecoratorMetadata": true,
+        "allowJs":true
+    }
+}
