@@ -18,6 +18,11 @@ export class AppComponent {
       //console.log(userName)
       this.userName = userName;
     })
+
+    this._githubService.getRepos().subscribe(githubData => {
+      //console.log(githubData)
+      this.githubData = githubData;
+    })
   }
 
   
