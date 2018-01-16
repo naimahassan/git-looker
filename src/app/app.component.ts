@@ -25,6 +25,20 @@ export class AppComponent {
     })
   }
 
+  searchUser(){
+    this._githubService.updateUser(this.userName);
+
+    this._githubService.getUser().subscribe(userName => {
+      //console.log(userName)
+      this.userName = userName;
+    })
+
+    this._githubService.getRepos().subscribe(githubData => {
+      //console.log(userName)
+      this.githubData = githubData;
+    })
+  }
+
   
 
 }

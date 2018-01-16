@@ -10,8 +10,8 @@ export class GithubService {
   private api_key:string = environment.api_key;
 
   constructor(private _http:HttpClient) {
-    this.username = 'naimahassan'
-    console.log("service ready")
+    this.username = 'naimahassan';
+    //console.log("service ready")
    }
 
    getUser(){
@@ -22,6 +22,10 @@ export class GithubService {
    getRepos(){
     return this._http.get('https://api.github.com/users/'+this.username + '/repos' + '?api_key' + this.api_key)
     .map(result => result);
+   }
+
+   updateUser(username:string){
+    this.username = username;
    }
 
 }

@@ -5,7 +5,8 @@ import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { GithubComponent } from './github/github.component';
-import { GithubService } from './githubs/github.service'
+import { GithubService } from './githubs/github.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { GithubService } from './githubs/github.service'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]
