@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GithubService } from './githubs/github.service'
+import { GithubService } from './githubs/github.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,15 @@ import { GithubService } from './githubs/github.service'
 })
 export class AppComponent {
   constructor(private http: HttpClient, private _githubService: GithubService) { }
-  userName: any = [];
+  username:string;
+  users: any = [];
   githubData: any = [];
   //avatarUrl="./assets/imageholder.png";
 
   ngOnInit() {
-    this._githubService.getUser().subscribe(userName => {
+    this._githubService.getUser().subscribe(user => {
       //console.log(userName)
-      this.userName = userName;
+      this.users = user;
     })
 
     this._githubService.getRepos().subscribe(githubData => {
@@ -26,11 +28,11 @@ export class AppComponent {
   }
 
   searchUser(){
-    this._githubService.updateUser(this.userName);
+    this._githubService.updateUser(this.username);
 
-    this._githubService.getUser().subscribe(userName => {
+    this._githubService.getUser().subscribe(user => {
       //console.log(userName)
-      this.userName = userName;
+      this.users = user;
     })
 
     this._githubService.getRepos().subscribe(githubData => {
